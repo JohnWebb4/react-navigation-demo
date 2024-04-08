@@ -7,11 +7,12 @@ import {RootParams} from '../types/navigation';
 import Header from './Header';
 
 interface PageProps {
+  children?: React.ReactNode;
   name: string;
   next?: string;
 }
 
-function Page({name, next}: PageProps) {
+function Page({children, name, next}: PageProps) {
   const {navigate} = useNavigation<NavigationProp<RootParams>>();
 
   const onPress = useCallback(() => {
@@ -26,6 +27,8 @@ function Page({name, next}: PageProps) {
         <Header>{name}</Header>
 
         {next ? <Button onPress={onPress} title={`To ${next}`} /> : undefined}
+
+        {children}
       </ScrollView>
     </SafeAreaView>
   );
@@ -37,7 +40,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
 });

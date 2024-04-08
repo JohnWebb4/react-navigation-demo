@@ -13,6 +13,7 @@ export interface RootParams extends ParamListBase {
 export interface AppParams extends ParamListBase {
   Home: {
     next?: string;
+    showConfetti?: boolean;
   };
   Devices: {
     next?: string;

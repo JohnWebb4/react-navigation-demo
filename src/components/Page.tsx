@@ -1,16 +1,21 @@
+import {RouteProp} from '@react-navigation/native';
 import {ScrollView, StyleSheet} from 'react-native';
-import Header from './Header';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
+import {RootParams} from '../types/navigation';
+import Header from './Header';
+
 interface PageProps {
-  title: string;
+  route: RouteProp<RootParams, 'Hello'>;
 }
 
-function Page({title}: PageProps) {
+function Page({route}: PageProps) {
+  const {name} = route;
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <ScrollView contentContainerStyle={styles.container}>
-        <Header>{title}</Header>
+        <Header>{name}</Header>
       </ScrollView>
     </SafeAreaView>
   );

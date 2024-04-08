@@ -25,7 +25,7 @@ function Page({name, next}: PageProps) {
       <ScrollView contentContainerStyle={styles.container}>
         <Header>{name}</Header>
 
-        <Button onPress={onPress} title={`To ${next}`} />
+        {next ? <Button onPress={onPress} title={`To ${next}`} /> : undefined}
       </ScrollView>
     </SafeAreaView>
   );

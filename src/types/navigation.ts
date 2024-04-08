@@ -1,10 +1,10 @@
 import {ParamListBase} from '@react-navigation/native';
 
 export interface RootParams extends ParamListBase {
-  Stack: {
+  Login: {
     next?: string;
   };
-  Modal: {
+  Support: {
     next?: string;
   };
 }

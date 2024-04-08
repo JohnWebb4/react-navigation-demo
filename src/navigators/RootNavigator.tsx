@@ -1,11 +1,9 @@
-import {createStackNavigator} from '@react-navigation/stack';
-
 import Logincreen from '../screens/LoginScreen';
-import SupportScreen from '../screens/SupportScreen';
-import {RootParams} from '../types/navigation';
+
+import modalNavigationGroup from './ModalNavigator';
 import TabNavigator from './TabNavigator';
 
-const Stack = createStackNavigator<RootParams>();
+import Stack from './RootStack';
 
 function RootNavigator() {
   return (
@@ -20,9 +18,7 @@ function RootNavigator() {
 
       <Stack.Screen name="App" component={TabNavigator} />
 
-      <Stack.Group screenOptions={{presentation: 'modal', headerShown: true}}>
-        <Stack.Screen name="Support" component={SupportScreen} />
-      </Stack.Group>
+      {modalNavigationGroup()}
     </Stack.Navigator>
   );
 }

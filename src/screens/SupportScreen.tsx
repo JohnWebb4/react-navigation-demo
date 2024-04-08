@@ -1,3 +1,4 @@
+import {useEffect, useState} from 'react';
 import {Button} from 'react-native';
 import {
   NavigationProp,
@@ -11,30 +12,28 @@ import Page from '../components/Page';
 import {RootParams} from '../types/navigation';
 
 function SupportScreen() {
-  const {navigate} = useNavigation<NavigationProp<RootParams>>();
-  const {name, params} = useRoute<RouteProp<RootParams, 'Support'>>();
+  const {navigate, setOptions} = useNavigation<NavigationProp<RootParams>>();
+  const {name} = useRoute<RouteProp<RootParams, 'Support'>>();
+  const [count, setCount] = useState(0);
 
-  function onNext() {
-    if (params?.next) {
-      navigate(params?.next);
+  useEffect(() => {
+    function onHome() {
+      navigate('Home', {
+        showConfetti: true,
+      });
     }
-  }
-
-  function onHome() {
-    navigate('Home', {
-      showConfetti: true,
+    setOptions({
+      headerRight: () => (
+        <Button title="Go Home" onPress={onHome} disabled={count <= 0} />
+      ),
     });
-  }
+  }, [count, setOptions]);
 
   return (
     <Page>
       <Header>{name}</Header>
 
-      {params?.next ? (
-        <Button title={`To ${params.next}`} onPress={onNext} />
-      ) : undefined}
-
-      <Button title="Go Home" onPress={onHome} />
+      <Button title={`Count ${count}`} onPress={() => setCount(count + 1)} />
     </Page>
   );
 }

@@ -6,22 +6,34 @@ import {
   useRoute,
 } from '@react-navigation/native';
 
-import {RootParams} from '../types/navigation';
+import Header from '../components/Header';
 import Page from '../components/Page';
-import {useCallback} from 'react';
+import {RootParams} from '../types/navigation';
 
 function SupportScreen() {
   const {navigate} = useNavigation<NavigationProp<RootParams>>();
   const {name, params} = useRoute<RouteProp<RootParams, 'Support'>>();
 
-  const onHome = useCallback(() => {
+  function onNext() {
+    if (params?.next) {
+      navigate(params?.next);
+    }
+  }
+
+  function onHome() {
     navigate('Home', {
       showConfetti: true,
     });
-  }, [navigate]);
+  }
 
   return (
-    <Page name={name} next={params?.next}>
+    <Page>
+      <Header>{name}</Header>
+
+      {params?.next ? (
+        <Button title={`To ${params.next}`} onPress={onNext} />
+      ) : undefined}
+
       <Button title="Go Home" onPress={onHome} />
     </Page>
   );

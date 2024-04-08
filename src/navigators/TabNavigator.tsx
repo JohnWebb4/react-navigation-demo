@@ -9,7 +9,14 @@ const BottomTab = createBottomTabNavigator<AppParams>();
 function TabNavigator() {
   return (
     <BottomTab.Navigator>
-      <BottomTab.Screen name="Home" component={HomeScreen} />
+      <BottomTab.Screen
+        name="Home"
+        component={HomeScreen}
+        initialParams={{
+          next: undefined,
+          showConfetti: false,
+        }}
+      />
 
       <BottomTab.Screen
         name="Devices"

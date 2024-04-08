@@ -4,7 +4,17 @@ export interface RootParams extends ParamListBase {
   Login: {
     next?: string;
   };
+  App: undefined;
   Support: {
+    next?: string;
+  };
+}
+
+export interface AppParams extends ParamListBase {
+  Home: {
+    next?: string;
+  };
+  Devices: {
     next?: string;
   };
 }

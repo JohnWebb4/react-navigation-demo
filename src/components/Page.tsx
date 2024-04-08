@@ -18,10 +18,10 @@ function Page({name, next}: PageProps) {
     if (next) {
       navigate(next);
     }
-  }, [next]);
+  }, [navigate, next]);
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={styles.container}>
         <Header>{name}</Header>
 
@@ -32,6 +32,9 @@ function Page({name, next}: PageProps) {
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

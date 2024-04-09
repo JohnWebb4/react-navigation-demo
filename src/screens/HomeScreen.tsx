@@ -12,17 +12,7 @@ import Page from '../components/Page';
 import {AppParams} from '../types/navigation';
 
 function HomeScreen() {
-  const {name, params} = useRoute<RouteProp<AppParams, 'Home'>>();
-
-  return (
-    <Page>
-      <Header>{name}</Header>
-
-      {params?.showConfetti ? (
-        <ConfettiCannon count={200} origin={{x: -10, y: 0}} />
-      ) : undefined}
-    </Page>
-  );
+  return null;
 }
 
 export default HomeScreen;

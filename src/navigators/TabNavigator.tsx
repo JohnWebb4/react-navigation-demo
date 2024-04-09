@@ -7,30 +7,7 @@ import DevicesScreen from '../screens/DevicesScreen';
 const BottomTab = createBottomTabNavigator<AppParams>();
 
 function TabNavigator() {
-  const hasDevices = true;
-
-  return (
-    <BottomTab.Navigator>
-      <BottomTab.Screen
-        name="Home"
-        component={HomeScreen}
-        initialParams={{
-          next: undefined,
-          showConfetti: false,
-        }}
-      />
-
-      {hasDevices ? (
-        <BottomTab.Screen
-          name="Devices"
-          component={DevicesScreen}
-          initialParams={{
-            next: 'Support',
-          }}
-        />
-      ) : undefined}
-    </BottomTab.Navigator>
-  );
+  return null;
 }
 
 export default TabNavigator;

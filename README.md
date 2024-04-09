@@ -3,8 +3,9 @@
 This is a demo of the following concepts in [React Navigation](https://reactnavigation.org/):
 
 - Stack Navigators
-- Modal Navigators
 - Tab Navigators
+- Conditional screens
+- Modal Navigators
 - Configuring static screen options (static header buttons)
 - Configuring dynamic screen options (screen level header buttons)
 - Passing params

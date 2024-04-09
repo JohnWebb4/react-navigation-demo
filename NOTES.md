@@ -1,0 +1,28 @@
+- Stack Navigators
+  - App.tsx high level containers
+  - What is a stack container [Link](https://reactnavigation.org/docs/stack-navigator/)
+  - Don't configure header shown false options
+  - Declaring screens
+  - Create plain screen with login header
+  - Getting screen name from props
+  - Passing initial params from navigator
+  - Reading next param on screen and next button
+- Tab Navigators
+  - Declaring app navigator in root
+  - Defining app navigator
+  - Defining home and device screens
+  - Going back to root navigator and setting header shown to false
+- Conditionally rendering devices screen
+- Modal Navigators
+  - Root navigator declaring modal navigation group
+  - Setting default options for modal navigation group
+  - Define support screen
+- Configuring static screen options (static header buttons)
+  - https://reactnavigation.org/docs/header-buttons/
+- Configuring dynamic screen options (screen level header buttons)
+  - Declare count state on screen
+  - Update header button to be disabled if count is zero
+  - https://reactnavigation.org/docs/header-buttons/
+- Passing params
+  - Pass showConfetti option
+  - Walk screen through flow one last time
